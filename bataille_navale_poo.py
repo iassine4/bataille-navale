@@ -19,7 +19,7 @@ class Ship:
 	def is_hit(self, coordinated: Tuple[int, int]) -> bool:
 		"""Retourne True si la coordonnée correspond à une case du navire."""
 
-		return self.position == coordinated
+		return coordinated in self.position
 
 	def register_hit(self, coordinated: Tuple[int, int]) -> str:
 		"""
@@ -40,3 +40,5 @@ class Ship:
 		return len(self.position) == 0
 
 
+porte_avion = Ship("porte-avion", [(2, 2), (2, 3), (2, 4), (2, 5), (2, 6)])
+print(porte_avion.is_hit((2, 3)))
